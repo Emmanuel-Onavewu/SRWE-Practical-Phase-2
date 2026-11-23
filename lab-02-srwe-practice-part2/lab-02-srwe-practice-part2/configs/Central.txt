@@ -1,0 +1,13 @@
+! Configuration commands used in this lab (not a running-config export)
+ipv6 unicast-routing
+
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0/2
+ip route 0.0.0.0 0.0.0.0 Serial0/1/0 10
+ipv6 route ::/0 2001:db8:acad:a::2
+ipv6 route ::/0 2001:db8:acad:b::2 10
+
+ip route 192.168.10.0 255.255.255.0 GigabitEthernet0/0/2
+ip route 192.168.10.0 255.255.255.0 Serial0/1/0 10
+
+ip route 192.168.3.122 255.255.255.255 Serial0/1/1
+ipv6 route 2001:db8:acad:3::122/128 2001:db8:acad:d::2
