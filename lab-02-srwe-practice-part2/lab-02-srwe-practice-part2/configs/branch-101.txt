@@ -1,0 +1,22 @@
+! Configuration commands used in this lab (not a running-config export)
+interface GigabitEthernet0/0/0.10
+ description WLAN user network VLAN 10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+
+ip dhcp excluded-address 192.168.10.1
+ip dhcp excluded-address 192.168.100.254
+ip dhcp pool WLAN-hosts
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 198.51.100.163
+
+interface GigabitEthernet0/0/1
+ ip address dhcp
+ no shutdown
+
+ipv6 unicast-routing
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0/1
+ip route 0.0.0.0 0.0.0.0 Serial0/1/0 10
+ipv6 route ::/0 2001:db8:acad:c::1
+ipv6 route ::/0 2001:db8:acad:b::1 10
