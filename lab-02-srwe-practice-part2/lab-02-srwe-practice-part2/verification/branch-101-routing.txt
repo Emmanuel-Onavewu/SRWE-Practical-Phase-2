@@ -1,0 +1,27 @@
+! Output captured during the lab
+
+--- Branch-101: show running-config | include route ---
+ default-router 192.168.10.1
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0/1
+ip route 0.0.0.0 0.0.0.0 Serial0/1/0 10
+ipv6 route ::/0 2001:DB8:ACAD:C::1
+ipv6 route ::/0 2001:DB8:ACAD:B::1 10
+
+--- Branch-101: show ip route static ---
+S*   0.0.0.0/0 is directly connected, GigabitEthernet0/0/1
+
+--- Branch-101: show ipv6 route (summary) ---
+S   ::/0 [1/0] via 2001:DB8:ACAD:C::1
+C   2001:DB8:ACAD:B::/64 via Serial0/1/0
+L   2001:DB8:ACAD:B::2/128
+C   2001:DB8:ACAD:C::/64 via GigabitEthernet0/0/1
+L   2001:DB8:ACAD:C::2/128
+
+--- Branch-101: ping 203.0.113.25 (second run) ---
+!!!!!  Success rate is 100 percent (5/5)
+
+--- Branch-101: ping 2001:db8:cafe::25 ---
+!!!!!  Success rate is 100 percent (5/5)
+
+--- Laptop: ping 192.168.10.1 ---
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)
