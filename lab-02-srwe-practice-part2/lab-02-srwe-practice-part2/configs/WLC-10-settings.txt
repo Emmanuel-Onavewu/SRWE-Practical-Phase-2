@@ -1,0 +1,11 @@
+WLC-10 settings (GUI)
+
+Interface:   WLAN 10, VLAN 10, port 1, IP 192.168.10.254/24, gateway 192.168.10.1
+RADIUS:      server 172.16.1.100, shared secret <REDACTED>
+WLAN:        profile WLAN 10, SSID SSID-10, interface WLAN 10
+             Security: WPA2 + 802.1X, RADIUS server attached
+             Advanced: FlexConnect Local Switching and Local Auth enabled
+DHCP scope:  Wired_Admin, 192.168.100.240 to 192.168.100.249, 255.255.255.0
+SNMP:        trap receiver 172.16.1.100, community <REDACTED>
+
+Laptop:      profile "work net", SSID SSID-10, enterprise auth, user1 / <REDACTED>
