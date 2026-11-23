@@ -5,8 +5,6 @@ Prototype a small enterprise network with static routing (including
 floating backups), switch security, DHCP, and a wireless LAN controller.
 Only four devices were configurable: Central, Branch-101, S1-1 and WLC-10.
 
-## Topology
-![Topology before configuration](screenshots/01-topology-before.png)
 
 ## Design summary
 | Area | Design |
